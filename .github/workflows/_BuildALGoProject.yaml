@@ -292,7 +292,7 @@ jobs:
       - name: Analyze Page Scripting Test Results
         id: analyzeTestResultsPageScripting
         if: (success() || failure()) && env.doNotRunpageScriptingTests == 'False'
-        uses: microsoft/AL-Go-Actions/AnalyzeTests@v7.2
+        uses: aholstrup1/AL-Go/Actions/AnalyzeTests@main
         with:
           shell: ${{ inputs.shell }}
           project: ${{ inputs.project }}
