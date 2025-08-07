@@ -1,0 +1,56 @@
+name: NewItemHasPCSBaseUnitOfMeasure
+description: Test recording
+telemetryId: 38bc7f93-55fd-4001-b686-3219c8218f3b
+start:
+  profile: ORDER PROCESSOR
+steps:
+  - type: navigate
+    target:
+      - page: Order Processor Role Center
+      - action: Items
+    description: Navigate to <caption>Items</caption>
+  - type: page-shown
+    source:
+      page: Item List
+    modal: false
+    runtimeId: b6q
+    description: Page <caption>Items</caption> was shown.
+  - type: invoke
+    target:
+      - page: Item List
+        runtimeRef: b6q
+      - action: Control_New
+    invokeType: New
+    description: Invoke New on <caption>New</caption>
+  - type: page-shown
+    source:
+      page: Select Item Templ. List
+    modal: true
+    runtimeId: bl8
+    description: Page <caption>Select a template for a new item</caption> was shown.
+  - type: invoke
+    target:
+      - page: Select Item Templ. List
+        runtimeRef: bl8
+    invokeType: LookupOk
+    description: Invoke LookupOk on <caption>Select a template for a new item</caption>
+  - type: page-closed
+    source:
+      page: Select Item Templ. List
+    runtimeId: bl8
+    description: Page <caption>Select a template for a new item</caption> was closed.
+  - type: page-shown
+    source:
+      page: Item Card
+    modal: false
+    runtimeId: bm5
+    description: Page <caption>New - Item Card</caption> was shown.
+  - type: validate
+    target:
+      - page: Item Card
+        runtimeRef: bm5
+      - field: Base Unit of Measure
+    operation: =
+    value: PCS
+    description: Validate <caption>Base Unit of Measure</caption>
+      <operation>is</operation> <value>PCS</value>
