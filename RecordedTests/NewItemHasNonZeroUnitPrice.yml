@@ -53,4 +53,4 @@ steps:
     value: 0
     description: Validate <caption>Unit Price</caption> <operation>is
       not</operation> <value>0.00</value>
-    operation: <>
+    operation: =
