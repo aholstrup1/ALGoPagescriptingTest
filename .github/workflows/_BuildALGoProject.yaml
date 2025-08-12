@@ -136,7 +136,7 @@ jobs:
       - name: Determine ArtifactUrl
         id: determineArtifactUrl
         if: steps.DetermineBuildProject.outputs.BuildIt == 'True'
-        uses: microsoft/AL-Go-Actions/DetermineArtifactUrl@v7.2
+        uses: aholstrup1/AL-Go/Actions/DetermineArtifactUrl@main
         with:
           shell: ${{ inputs.shell }}
           project: ${{ inputs.project }}
