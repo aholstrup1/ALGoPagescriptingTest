@@ -1,0 +1,56 @@
+name: NewItemHasUnitPriceNonZero
+description: Test recording
+telemetryId: 7b849dba-6cd5-4abc-be23-0a60a12776aa
+start:
+  profile: ORDER PROCESSOR
+steps:
+  - type: navigate
+    target:
+      - page: Order Processor Role Center
+      - action: Items
+    description: Navigate to <caption>Items</caption>
+  - type: page-shown
+    source:
+      page: Item List
+    modal: false
+    runtimeId: bvz
+    description: Page <caption>Items</caption> was shown.
+  - type: invoke
+    target:
+      - page: Item List
+        runtimeRef: bvz
+      - action: Control_New
+    invokeType: New
+    description: Invoke New on <caption>New</caption>
+  - type: page-shown
+    source:
+      page: Select Item Templ. List
+    modal: true
+    runtimeId: b1ah
+    description: Page <caption>Select a template for a new item</caption> was shown.
+  - type: invoke
+    target:
+      - page: Select Item Templ. List
+        runtimeRef: b1ah
+    invokeType: LookupOk
+    description: Invoke LookupOk on <caption>Select a template for a new item</caption>
+  - type: page-closed
+    source:
+      page: Select Item Templ. List
+    runtimeId: b1ah
+    description: Page <caption>Select a template for a new item</caption> was closed.
+  - type: page-shown
+    source:
+      page: Item Card
+    modal: false
+    runtimeId: b1be
+    description: Page <caption>New - Item Card</caption> was shown.
+  - type: validate
+    target:
+      - page: Item Card
+        runtimeRef: b1be
+      - field: Unit Price
+    value: 0
+    description: Validate <caption>Unit Price</caption> <operation>is
+      not</operation> <value>0.00</value>
+    operation: <>
