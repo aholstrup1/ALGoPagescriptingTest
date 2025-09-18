@@ -1,8 +1,10 @@
 {
-  "$schema": "https://raw.githubusercontent.com/microsoft/AL-Go-Actions/v7.2/settings.schema.json",
+  "$schema": "https://raw.githubusercontent.com/microsoft/AL-Go-Actions/v7.3/.Modules/settings.schema.json",
   "country": "us",
   "appFolders": [],
   "testFolders": [],
   "bcptTestFolders": [],
-  "pageScriptingTests": ["RecordedTests"]
+  "pageScriptingTests": [
+    "RecordedTests"
+  ]
 }
