@@ -5,6 +5,7 @@
   "testFolders": [],
   "bcptTestFolders": [],
   "pageScriptingTests": [
-    "RecordedTests/*.yml"
+    "RecordedTests/*.yml",
+    "MyRecordedTestsFolderPathWithALongFoldername-MyRecordedTestsFolderPathWithALongFoldername-MyRecordedTestsFolderPathWithALongFoldername-MyRecordedTestsFolderPathWithALongFoldername-MyRecordedTestsFolderPathWithALongFoldername/*.yml"
   ]
 }
